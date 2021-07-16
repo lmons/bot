@@ -56,7 +56,8 @@ async function main () {
   const client = await wdio.remote(opts);
 
   
-//client.startActivity('com.zhiliaoapp.musically','com.ss.android.ugc.aweme.splash.SplashActivity')
+//client.startActivity('com.zhiliaoapp.musically','com.ss.android.ugc.aweme.splash.SplashActivity','','','android.intent.action.VIEW','','',' -d "https://www.tiktok.com/@onesarahhh"','')
+client.execute("mobile: shell", {'command':'am start','args': ["-a", "android.intent.action.VIEW","-d","'https://www.tiktok.com/@onesarahhh' com.zhiliaoapp.musically"]});
 /* 
   let a=await client.$("//android.widget.ImageView[@content-desc=\"TikTok\"]");
 a.click();
